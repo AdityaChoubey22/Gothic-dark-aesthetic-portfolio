@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NOCTIFER — Abyssal Architect</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --black:#0b0b0b;
+  --dark:#121212;
+  --red:#8b0000;
+  --ash:#b5b5b5;
+  --bone:#e6e0d8;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  background:var(--black);
+  color:var(--ash);
+  font-family:'Cormorant Garamond', serif;
+  overflow-x:hidden;
+}
+
+/* Noise Overlay */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:url("https://grainy-gradients.vercel.app/noise.svg");
+  opacity:0.07;
+  pointer-events:none;
+  z-index:999;
+}
+
+/* ---------- HERO ---------- */
+.hero{
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:radial-gradient(circle at center, #111 0%, #000 70%);
+}
+
+.hero h1{
+  font-family:'Cinzel Decorative', serif;
+  font-size:4rem;
+  color:var(--bone);
+  letter-spacing:4px;
+  text-shadow:0 0 25px rgba(139,0,0,.4);
+}
+
+.hero p{
+  margin-top:20px;
+  font-size:1.2rem;
+  letter-spacing:2px;
+  color:var(--ash);
+}
+
+.sigils{
+  margin-top:40px;
+  font-size:2rem;
+  color:var(--red);
+  animation:rotate 25s linear infinite;
+}
+
+@keyframes rotate{
+  from{transform:rotate(0deg);}
+  to{transform:rotate(360deg);}
+}
+
+/* ---------- SECTION ---------- */
+section{
+  padding:100px 10%;
+}
+
+.section-title{
+  font-family:'Cinzel Decorative', serif;
+  font-size:2.5rem;
+  color:var(--bone);
+  border-bottom:1px solid var(--red);
+  display:inline-block;
+  margin-bottom:40px;
+}
+
+/* ---------- ABOUT ---------- */
+.about p{
+  font-size:1.2rem;
+  line-height:1.9;
+  max-width:800px;
+}
+
+/* ---------- PROJECTS ---------- */
+.projects{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+  gap:30px;
+}
+
+.relic{
+  background:var(--dark);
+  border:1px solid #1f1f1f;
+  padding:30px;
+  transition:0.4s;
+  position:relative;
+}
+
+.relic::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border:1px solid var(--red);
+  opacity:0;
+  transition:.4s;
+}
+
+.relic:hover::before{
+  opacity:1;
+}
+
+.relic:hover{
+  transform:translateY(-8px);
+  box-shadow:0 0 30px rgba(139,0,0,.3);
+}
+
+.relic h3{
+  color:var(--bone);
+  margin-bottom:10px;
+  font-family:'Cinzel Decorative', serif;
+}
+
+.relic span{
+  font-style:italic;
+  color:var(--red);
+  font-size:.9rem;
+}
+
+/* ---------- SKILLS ---------- */
+.skills{
+  display:flex;
+  flex-wrap:wrap;
+  gap:15px;
+}
+
+.skill{
+  border:1px solid var(--red);
+  padding:10px 18px;
+  font-size:1rem;
+  letter-spacing:1px;
+}
+
+/* ---------- CONTACT ---------- */
+.contact p{
+  font-size:1.2rem;
+  margin-bottom:20px;
+}
+
+.contact a{
+  color:var(--red);
+  text-decoration:none;
+  border-bottom:1px solid var(--red);
+}
+
+/* ---------- FOOTER ---------- */
+footer{
+  text-align:center;
+  padding:40px;
+  font-size:.9rem;
+  color:#555;
+}
+
+/* Fade animation */
+.fade{
+  opacity:0;
+  transform:translateY(40px);
+  transition:1.4s;
+}
+
+.fade.show{
+  opacity:1;
+  transform:translateY(0);
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div>
+    <h1>ADITYA</h1>
+    <p>ARCHITECT OF ABYSSAL SYSTEMS</p>
+    <div class="sigils">⛧ ☽ ⛧</div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about fade">
+  <div class="section-title">CONFESSION</div>
+  <p>
+    I am a creator drawn to silence, shadow, and forbidden architecture.
+    Where others seek brightness, I sculpt systems born in darkness.
+    Code is my ritual. Design is my sigil.
+  </p>
+</section>
+
+<!-- PROJECTS -->
+<section class="fade">
+  <div class="section-title">RELICS</div>
+  <div class="projects">
+    <div class="relic">
+
+        <h3>Inventarium Noctis</h3>
+      <span>Inventory System</span>
+      <p>Forged to track what must not be lost. Efficient, silent, eternal.</p>
+    </div>
+    <div class="relic">
+      <h3>Obscura Vision</h3>
+      <span>AI Video Generator</span>
+      <p>A machine that turns whispers into moving nightmares.</p>
+    </div>
+    <div class="relic">
+      <h3>Sigil Engine</h3>
+      <span>Data Visualization</span>
+      <p>Numbers reshaped into occult patterns of meaning.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="fade">
+  <div class="section-title">GRIMOIRES</div>
+  <div class="skills">
+    <div class="skill">Python</div>
+    <div class="skill">JavaScript</div>
+    <div class="skill">AI / ML</div>
+    <div class="skill">Data Science</div>
+    <div class="skill">System Design</div>
+    <div class="skill">Occult UI</div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact fade">
+  <div class="section-title">INVOCATION</div>
+  <p>Summon me through the following channel:</p>
+  <a href="mailto:yourmail@example.com">yourmail@example.com</a>
+</section>
+
+<footer>
+  © 2026 NOCTIFER — All rituals reserved.
+</footer>
+
+<script>
+const faders=document.querySelectorAll(".fade");
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+    }
+  });
+},{threshold:.2});
+
+faders.forEach(f=>observer.observe(f));
+</script>
+
+</body>
+</html>
